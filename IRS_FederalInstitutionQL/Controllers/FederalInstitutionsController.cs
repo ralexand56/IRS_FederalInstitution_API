@@ -21,7 +21,7 @@ namespace IRS_FederalInstitutionQL.Controllers
         private DepositDB depositDB = new DepositDB();
         //private List<DepartmentDB> DepartmentDBs;
 
-        private List<FederalInstitutionCount> fedInstitutionCounts = new List<FederalInstitutionCount>();
+        //private List<FederalInstitutionCount> fedInstitutionCounts = new List<FederalInstitutionCount>();
 
         FederalInstitutionsController()
         {

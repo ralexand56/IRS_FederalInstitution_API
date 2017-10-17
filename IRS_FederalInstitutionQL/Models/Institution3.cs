@@ -5,7 +5,7 @@ using System.Web;
 
 namespace IRS_FederalInstitutionQL.Models
 {
-    public class Institution
+    public class Institution3
     {
         public string InstitutionID { get; set; }
         public string CustomID { get; set; }

@@ -1,5 +1,6 @@
 namespace IRS_FederalInstitutionQL.Models.FederalInstitution
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -12,9 +13,9 @@ namespace IRS_FederalInstitutionQL.Models.FederalInstitution
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FederalInstitution()
         {
-            //FederalInstitution1 = new HashSet<FederalInstitution>();
-            //FederalInstitution11 = new HashSet<FederalInstitution>();
-            FederalInstitutionCounts = new List<FederalInstitutionCount>();
+            FederalInstitution1 = new HashSet<FederalInstitution>();
+            FederalInstitution11 = new HashSet<FederalInstitution>();
+            Institutions = new HashSet<Institution>();
         }
 
         [Key]
@@ -90,17 +91,24 @@ namespace IRS_FederalInstitutionQL.Models.FederalInstitution
 
         public bool IsBranch { get; set; }
 
+        public int? TotalAssets { get; set; }
+
+        [JsonIgnore]
         public virtual FederalEntityType FederalEntityType { get; set; }
-        public List<FederalInstitutionCount> FederalInstitutionCounts { get; set; }
 
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<FederalInstitution> FederalInstitution1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FederalInstitution> FederalInstitution1 { get; set; }
 
-        //public virtual FederalInstitution FederalInstitution2 { get; set; }
+        [JsonIgnore]
+        public virtual FederalInstitution FederalInstitution2 { get; set; }
 
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<FederalInstitution> FederalInstitution11 { get; set; }
+        [JsonIgnore]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FederalInstitution> FederalInstitution11 { get; set; }
 
-        //public virtual FederalInstitution FederalInstitution3 { get; set; }
+        public virtual FederalInstitution FederalInstitution3 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Institution> Institutions { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace IRS_FederalInstitutionQL.Models.FederalInstitution
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Department()
         {
-            //DepartmentDBs = new HashSet<DepartmentDB>();
+            DepartmentDBs = new HashSet<DepartmentDB>();
         }
 
         [Key]
@@ -25,7 +25,7 @@ namespace IRS_FederalInstitutionQL.Models.FederalInstitution
         [StringLength(50)]
         public string Color { get; set; }
 
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<DepartmentDB> DepartmentDBs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DepartmentDB> DepartmentDBs { get; set; }
     }
 }

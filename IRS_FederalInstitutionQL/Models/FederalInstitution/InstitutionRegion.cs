@@ -14,7 +14,5 @@ namespace IRS_FederalInstitutionQL.Models.FederalInstitution
         public int InstitutionID { get; set; }
 
         public int RegionID { get; set; }
-
-        public virtual Region Region { get; set; }
     }
 }
